@@ -42,6 +42,6 @@ module "forward-zone" {
 
 | Name | Description |
 |------|-------------|
-| name_servers | Nameservers for the route53 zone |
-| zone_id | ID of the route53 zone |
+| name_servers | Nameservers for the new, child route53 zone |
+| zone_id | ID of the new, child route53 zone |
 
