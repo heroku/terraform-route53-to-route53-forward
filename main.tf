@@ -4,7 +4,8 @@ locals {
 }
 
 data "aws_route53_zone" "root" {
-  name = "${var.root_domain}."
+  name     = "${var.root_domain}."
+  provider = "aws.root"
 }
 
 resource "aws_route53_zone" "main" {
