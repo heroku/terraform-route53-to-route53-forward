@@ -29,19 +29,18 @@ module "forward-zone" {
   }
 }
 ```
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| forward_domain | Domain to forward. Must be the fully qualified domain name. | string | - | yes |
-| root_domain | Domain containing the subdomain to forward. | string | - | yes |
-| ttl | TTL for the NS records to be created. | string | `600` | no |
+| force\_destroy | (Optional, Default:false) A boolean that indicates all domains should be deleted from the zone so it can be destroyed without error. | string | `"false"` | no |
+| forward\_domain | Domain to forward. Must be the fully qualified domain name. | string | n/a | yes |
+| root\_domain | Domain containing the subdomain to forward. | string | n/a | yes |
+| ttl | (Optional, Default:600) TTL for the NS records to be created. | string | `"600"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| name_servers | Nameservers for the new, child route53 zone |
-| zone_id | ID of the new, child route53 zone |
-
+| name\_servers | Nameservers for the new, child route53 zone |
+| zone\_id | ID of the new, child route53 zone |
