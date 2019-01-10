@@ -6,10 +6,13 @@ locals {
 data "aws_route53_zone" "root" {
   name     = "${var.root_domain}."
   provider = "aws.root"
+
+  # Note: Force destroy shouldn't ever be needed in the root zone for our purposes.
 }
 
 resource "aws_route53_zone" "main" {
-  name = "${var.forward_domain}"
+  name          = "${var.forward_domain}"
+  force_destroy = "${var.force_destroy}"
 }
 
 resource "aws_route53_record" "forward" {

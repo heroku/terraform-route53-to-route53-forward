@@ -11,5 +11,10 @@ variable "forward_domain" {
 variable "ttl" {
   type        = "string"
   default     = "600"
-  description = "TTL for the NS records to be created."
+  description = "(Optional, Default:600) TTL for the NS records to be created."
+}
+
+variable "force_destroy" {
+  description = "(Optional, Default:false) A boolean that indicates all domains should be deleted from the zone so it can be destroyed without error."
+  default     = "false"
 }
