@@ -36,6 +36,7 @@ module "forward-zone" {
 | force\_destroy | (Optional, Default:false) A boolean that indicates all domains should be deleted from the zone so it can be destroyed without error. | string | `"false"` | no |
 | forward\_domain | Domain to forward. Must be the fully qualified domain name. | string | n/a | yes |
 | root\_domain | Domain containing the subdomain to forward. | string | n/a | yes |
+| tags | (Optional, Default: {}) A map of tags to be added to the zone created. | map | `<map>` | no |
 | ttl | (Optional, Default:600) TTL for the NS records to be created. | string | `"600"` | no |
 
 ## Outputs
@@ -44,3 +45,4 @@ module "forward-zone" {
 |------|-------------|
 | name\_servers | Nameservers for the new, child route53 zone |
 | zone\_id | ID of the new, child route53 zone |
+
