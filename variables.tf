@@ -18,3 +18,10 @@ variable "force_destroy" {
   description = "(Optional, Default:false) A boolean that indicates all domains should be deleted from the zone so it can be destroyed without error."
   default     = "false"
 }
+
+variable "tags" {
+  description = "(Optional, Default: {}) A map of tags to be added to the zone created."
+  default = {
+    Managed = "terraform"
+  }
+}

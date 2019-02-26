@@ -13,6 +13,7 @@ data "aws_route53_zone" "root" {
 resource "aws_route53_zone" "main" {
   name          = "${var.forward_domain}"
   force_destroy = "${var.force_destroy}"
+  tags          = "${var.tags}"
 }
 
 resource "aws_route53_record" "forward" {
