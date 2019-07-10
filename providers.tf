@@ -7,3 +7,4 @@ provider "aws" {
 provider "aws" {
   alias = "root"
 }
+
